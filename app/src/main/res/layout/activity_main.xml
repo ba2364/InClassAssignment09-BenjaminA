@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="5sp"
-    tools:context="com.ba2364.inclassassignment09_01.MainActivity">
+    tools:context="com.ba2364.inclassassignment09_01.Main2Activity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -29,16 +29,24 @@
         android:hint="@string/messagePrompt"
         android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/signOutButton"
-        style="@style/ButtonStyle"
-        android:onClick="signOut"
-        android:text="@string/signOutButton" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/sendButton"
-        style="@style/ButtonStyle"
-        android:onClick="sendText"
-        android:text="@string/sendButton" />
+        <Button
+            android:id="@+id/sendButton"
+            style="@style/ButtonStyle"
+            android:onClick="sendText"
+            android:text="@string/sendButton" />
+
+        <Button
+            android:id="@+id/signOutButton"
+            style="@style/ButtonStyle"
+            android:onClick="signOut"
+            android:text="@string/signOutButton" />
+    </LinearLayout>
+
 
 </LinearLayout>

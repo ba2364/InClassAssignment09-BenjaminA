@@ -20,11 +20,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 
-public class MainActivity extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity {
 
     TextView userInput;
     TextView displayText;
-    private ArrayList<String> textList = new ArrayList<>();
+    private ArrayList<String> messageList = new ArrayList<>();
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private FirebaseAuth auth = FirebaseAuth.getInstance();
     private FirebaseAuth.AuthStateListener authListener;
@@ -45,24 +45,24 @@ public class MainActivity extends AppCompatActivity {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
 
                 if (user == null) {
-                    startActivity(new Intent(MainActivity.this, LogInActivity.class));
+                    startActivity(new Intent(Main2Activity.this, LogInActivity.class));
                 } else {
                     userRef = database.getReference(user.getUid());
                     userRef.addChildEventListener(new ChildEventListener() {
                         @Override
                         public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                            textList.add(dataSnapshot.getValue(String.class));
+                            messageList.add(dataSnapshot.getValue(String.class));
                             displayText();
                         }
 
                         @Override
                         public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                            Toast.makeText(MainActivity.this, dataSnapshot.getValue(String.class) + " has changed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Main2Activity.this, dataSnapshot.getValue(String.class) + " has changed", Toast.LENGTH_SHORT).show();
                         }
 
                         @Override
                         public void onChildRemoved(DataSnapshot dataSnapshot) {
-                            Toast.makeText(MainActivity.this, dataSnapshot.getValue(String.class) + " is removed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Main2Activity.this, dataSnapshot.getValue(String.class) + " is removed", Toast.LENGTH_SHORT).show();
                         }
 
                         @Override
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayText() {
         String text = "";
-        for (String s : textList) {
+        for (String s : messageList) {
             text += s + "\n";
 
         }
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void signOut(View view) {
         auth.signOut();
-        textList.clear();
+        messageList.clear();
         displayText.setText("");
         userInput.setText("");
     }

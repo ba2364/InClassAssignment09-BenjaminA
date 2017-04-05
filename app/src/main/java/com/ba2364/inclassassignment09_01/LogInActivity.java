@@ -14,8 +14,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LogInActivity extends AppCompatActivity {
 
-    private EditText emailEditText;
-    private EditText passwordEditText;
+    private EditText emailBox;
+    private EditText passwordBox;
 
     private FirebaseAuth mAuth;
 
@@ -24,15 +24,15 @@ public class LogInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
-        emailEditText = (EditText) findViewById(R.id.emailPrompt);
-        passwordEditText = (EditText) findViewById(R.id.passwordPrompt);
+        emailBox = (EditText) findViewById(R.id.emailPrompt);
+        passwordBox = (EditText) findViewById(R.id.passwordPrompt);
 
         mAuth = FirebaseAuth.getInstance();
     }
 
-    public void login(View view) {
-        String email = emailEditText.getText().toString();
-        String password = passwordEditText.getText().toString();
+    public void logIn(View view) {
+        String email = emailBox.getText().toString();
+        String password = passwordBox.getText().toString();
 
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -41,7 +41,7 @@ public class LogInActivity extends AppCompatActivity {
                         if (!task.isSuccessful()) {
                             Toast.makeText(LogInActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(LogInActivity.this, task.getResult().getUser().getEmail() + " logged in successful",
+                            Toast.makeText(LogInActivity.this, task.getResult().getUser().getEmail() + " log-in successful",
                                     Toast.LENGTH_SHORT).show();
                             finish();
                         }
@@ -51,8 +51,8 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     public void signUp(View view) {
-        String email = emailEditText.getText().toString();
-        String password = passwordEditText.getText().toString();
+        String email = emailBox.getText().toString();
+        String password = passwordBox.getText().toString();
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -61,7 +61,7 @@ public class LogInActivity extends AppCompatActivity {
                         if (!task.isSuccessful()) {
                             Toast.makeText(LogInActivity.this, task.getException().toString(), Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(LogInActivity.this, task.getResult().getUser().getEmail() + " signed up successful",
+                            Toast.makeText(LogInActivity.this, task.getResult().getUser().getEmail() + " sign-up successful",
                                     Toast.LENGTH_SHORT).show();
                             finish();
                         }
