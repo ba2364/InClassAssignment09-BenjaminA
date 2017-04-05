@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5sp"
+    tools:context="com.ba2364.inclassassignment09_01.LogInActivity">
+
+    <EditText
+        android:id="@+id/emailPrompt"
+        style="@style/EditTextStyle"
+        android:hint="@string/emailPrompt"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/passwordPrompt"
+        style="@style/EditTextStyle"
+        android:fontFamily="@string/messagePrompt"
+        android:hint="@string/passwordPrompt"
+        android:inputType="textPassword" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/logInButton"
+            style="@style/ButtonStyle"
+            android:onClick="logIn"
+            android:text="@string/logInButton" />
+
+        <Button
+            android:id="@+id/signUpButton"
+            style="@style/ButtonStyle"
+            android:onClick="signUp"
+            android:text="@string/signUpButton" />
+    </LinearLayout>
+
+</LinearLayout>

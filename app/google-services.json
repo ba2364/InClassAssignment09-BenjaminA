@@ -1,0 +1,58 @@
+{
+  "project_info": {
+    "project_number": "181651710733",
+    "firebase_url": "https://inclassassignment09-benjamina.firebaseio.com",
+    "project_id": "inclassassignment09-benjamina",
+    "storage_bucket": "inclassassignment09-benjamina.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181651710733:android:1c7d5945d01356a1",
+        "android_client_info": {
+          "package_name": "com.ba2364.inclassassignment09_01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "181651710733-drvlfisdmq2itc6jvf1fedqkou19ach3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ba2364.inclassassignment09_01",
+            "certificate_hash": "129d3a5774714432af462eedd03315cf282f01bb"
+          }
+        },
+        {
+          "client_id": "181651710733-i962e456qog3qa2nlu222hk6u8pehk04.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDC1M8BQEi0Ahtsm0ZeXZSKHd4_a0uhDZ4"
+        },
+        {
+          "current_key": "AIzaSyBmMITXoQbFv1hH9N0cv69XD6saDot7RiA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "181651710733-i962e456qog3qa2nlu222hk6u8pehk04.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

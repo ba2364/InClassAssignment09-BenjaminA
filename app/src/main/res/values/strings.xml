@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Firebase Login Tester</string>
+    <string name="emailPrompt">Enter your email</string>
+    <string name="passwordPrompt">Enter your password</string>
+    <string name="logInButton">Log In</string>
+    <string name="signUpButton">Sign Up</string>
+    <string name="sendButton">Send</string>
+    <string name="signOutButton">Sign Out</string>
+    <string name="messagePrompt">Enter Text Here</string>
+</resources>
